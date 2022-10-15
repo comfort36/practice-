@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+/* CSS SELECTORS */
+
+/* UNIVERSAL */
+
+*{
+
+  Margin: 0 ;
+  Padding: 0;
+  box-sizing: border-box;
+
+  
+}
+:root{
+  
+  --almost_white: hsl(0,0%,98%);
+  --medium_grey:hsl(0,0%,41%);
+  --almost_black: hsl(0,0%,8%);
+}
+
+
+/* BODY HEADER STYLES  */
+
+body{
+     font-size:18px;
+     font-family: 'Epilogue', sans-serif ;
+     height: 100%;
+}
+
+
+/* HEADER STYLES*/
+
+.mobileHeader {
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0.8rem;
+
+}
+  .mobileHeader #menutoggle{
+    display: none;
+  }
+/* hamburger container styles */
+.mobileHeader .menuButtonContainer{
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.mobileHeader .menuButtonContainer .menuButton,
+.menuButton::before,
+.menuButton::after{
+  display: block;
+  background-color:#000;
+  width: 1.8rem;
+  height: 4px;
+  position: absolute;
+  transition:transform 500ms cubic-bezier(0.23,1,0.32,1);
+  z-index: 1000;
+}
+.mobileHeader .menuButtonContainer .menuButton::before{
+  content: "";
+  margin-block-start: -8px;
+}
+.mobileHeader .menuButtonContainer  .menuButton::after{
+  content: "";
+  margin-block-start: 8px;
+}
+.mobileHeader #menutoggle ~ .nav{
+  background-color: rgba( 0, 0, 0,)
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-inline:1rem ;
+  bottom:0;
+  color: rgb(29,27,27) ;
+  transform: translateX(120%);
+  transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.mobileHeader #menutoggle ~ .nav .menu{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  padding-block-start:3rem ;
+
+}
+.mobileHeader #menutoggle ~ .nav .menu>li{
+  border-bottom: 1px solid grey;
+  padding-block: 0.7rem;
+  list-style: none; 
+}
+a{
+  text-decoration: none;
+  color: #151617;
+}
+.mobileHeader .nav .loginReg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.mobileHeader .nav .loginReg a{
+  text-align: center;
+  text-decoration: none;
+ 
+} 
+/*active*/
+/*active hamburger b1utton states styles*/
+#menutoggle:checked +.menuButtonContainer .menuButtton::before{
+  margin-block-start: 0;
+  transform:rotate(-405deg);
+}
+#menutoggle:checked + .menuButtonContainer .menuButton{
+  background-color: rgba(255, 255, 255, 0);
+}
+#menutoggle:checked + .menuButtonContainer .menuButton::after{
+  margin-block-start: 0;
+  transform:rotate(405deg);
+
+}
+/*ACTIVE MENU*/
+.mobileHeader #menutoggle:checked ~ .nav{
+ top: 0;
+ position: absolute;
+ transform: translateX(0%);
+ width: 70%;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ align-items: center;
+ color: gray;
+ background-color: aqua;
+ gap:1rem;
+ padding-inline-start:1rem;
+
+ 
+}
+
+.nav_item .sublist{
+  display: none;
+  flex-direction: column;
+  padding:1rem 0.8rem;
+  justify-content: center;
+  align-items: start;
+}
+.sublist .sublink{
+  padding-block: 0.8rem;
+  padding-inline-start: 1.5rem;
+}
+.nav_link:active+.sublist{
+  display: flex;
+}
+/* MAINSECTION STYLES */
+.main{
+  height: 100%;
+ 
+  
+}
+.main .mainsection{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center */
+  align-items: center;
+  height: 65%;
+  margin-block-end: 1rem;
+  
+  
+  
+}
+.main .mainsection .image{
+  padding: 10rem;
+  width: 100%;
+  height: 50%;
+  background-image:url(../assets/images/image-hero-mobile.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+
+}
+.main .mainsection .textcontent{
+  width: 100%;
+  text-align: center;
+  height: 50%;
+  padding-block-start: 1rem;
+  padding-block-end: 2rem;
+  
+}
+
+.main .mainsection .textcontent h1{
+  
+  font-size: 2rem;
+  font-weight: 700;
+  margin-block: 1rem;
+
+}
+.main .mainsection .textcontent p{
+  
+  font-weight: 500;
+  margin-block:1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--medium_grey);
+
+}
+.main .mainsection .textcontent a{
+  padding: 1rem 1.5rem;
+  border-radius:10px ;
+  margin-block: 2rem;
+  background-color: var(--almost_black);
+  color: var(--almost_white);
+
+}
+.main .footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.main .footer img{
+  margin: 0 auto;
+  display: inline-block;
+  width:4rem;
+  
+ 
+}

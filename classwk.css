@@ -1,0 +1,46 @@
+/* css selector */
+/* universal */
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+/* body header styles */
+body{
+    font-size: 18;
+    font-family: 'epilogue', sans-serif;
+    height: 100%;
+
+}
+/* header styles */
+.mobileHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+}
+.mobileHeader #menutoggle{
+    display: none;
+}
+/* Hamburger container style */
+ .mobileHeader.menuButtoncontainer{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+width: 30px;
+height: 100%;
+cursor: pointer;
+}
+.mobileHeader.menuButtoncontainer .menuButton,
+.menuButton::before,
+.menuButton::after{
+    background-color: black;
+    display: block;
+    width: 1.8rem;
+    height: 4px;
+    position: absolute;
+
+
+}
+

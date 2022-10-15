@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+/* css selectors */
+/* universal */
+*{
+   margin: 0;
+   padding: 0; 
+   box-sizing: border-box;
+}
+/*body Header style*/
+body{
+    font-size:18 px;
+    font-family:'Epilogue', sans-serif;
+}
+/*Header Styles*/
+.mobileHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+}
+.mobileHeader #menutoggle{
+    display:none;
+}
+/*hamburger container styles*/
+.mobileHeader .menubuttoncontainer{
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items:center ;
+    width: 30px;
+    height: 100%;
+    cursor: pointer;
+    padding: 1rem;
+  }
+  .mobileHeader .menubuttoncontainer .menubutton,
+  .menubutton::before,
+  .menubutton::after{
+    
+    display: block; 
+    background-color:#0000 ;
+    width: 1.8rem; 
+    height:4px ;
+    position:absolute ;
+    z-index: 1000;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.mobileHeader .menubuttoncontainer  .menubutton::before{
+    content: "";
+    margin-block-end: -8px;
+}   
+.mobileHeader .menubuttoncontainer   .menubutton::before{
+    content: "";
+    margin-block-start: 8px;
+}
+.mobileHeader #menutoggle ~ .nav{
+  background-color: mediumseagreen;
+  left: 30%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-inline:1rem ;
+  bottom:0;
+  color: rgb(29,27,27) ;
+  transform: translateX(0);
+  transition: transform 500ms cubic-bezier(0.5, 0, 0.5, 1);
+}
+.mobileHeader #menutoggle ~ .nav .menu{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    padding-block-start:3rem ;
+  
+  }
+  .mobileHeader #menutoggle ~ .nav .menu>li{
+    border-bottom: 1px solid grey;
+    padding-block: 0.7rem; 
+  }
+  a{
+    text-decoration: none;
+    color: #151617;
+  }
+  .mobileHeader .nav .loginReg a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .mobileHeader .nav .loginReg a{
+    text-align: center;
+    text-decoration: none;
+  }
+
