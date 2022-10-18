@@ -39,7 +39,7 @@ body{
   .menubutton::after{
     
     display: block; 
-    background-color:#0000 ;
+    background-color:#000 ; /* This line had an invalid color value of #0000*/
     width: 1.8rem; 
     height:4px ;
     position:absolute ;
