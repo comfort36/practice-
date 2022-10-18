@@ -32,7 +32,7 @@ body{
     width: 30px;
     height: 100%;
     cursor: pointer;
-    padding: 1rem;
+    /* padding: 1rem; */ /* This line was commented*/
   }
   .mobileHeader .menubuttoncontainer .menubutton,
   .menubutton::before,
