@@ -32,29 +32,44 @@ body{
     width: 30px;
     height: 100%;
     cursor: pointer;
-    padding: 1rem;
+    /* padding: 1rem; */ /* This line was commented*/
   }
   .mobileHeader .menubuttoncontainer .menubutton,
   .menubutton::before,
   .menubutton::after{
     
     display: block; 
-    background-color:#0000 ;
+    background-color:#000 ; /* This line had an invalid color value of #0000*/
     width: 1.8rem; 
     height:4px ;
     position:absolute ;
     z-index: 1000;
     transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
+/* Correction 1 : The line below had a wrong property of
+
+    margin-block-end: 8px;
+
+
+
+*/
+
 .mobileHeader .menubuttoncontainer  .menubutton::before{
-    content: "";
-    margin-block-end: -8px;
+  content: "";
+  margin-block-start: -8px;
 }   
-.mobileHeader .menubuttoncontainer   .menubutton::before{
-    content: "";
-    margin-block-start: 8px;
+/* Correction 2 : The line below had a wrong selector of
+.mobileHeader .menubuttoncontainer   .menubutton::before{ 
+  content: "";
+  margin-block-start: 8px;
 }
-.mobileHeader #menutoggle ~ .nav{
+
+
+*/
+.mobileHeader .menubuttoncontainer   .menubutton::after{ 
+  content: "";
+  margin-block-start: 8px;
+}.mobileHeader #menutoggle ~ .nav{
   background-color: mediumseagreen;
   left: 30%;
   position: fixed;
